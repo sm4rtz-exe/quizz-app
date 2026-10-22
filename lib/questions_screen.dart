@@ -3,9 +3,14 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key, required this.onSlectedAnswer});
+  const QuestionsScreen({
+    super.key,
+    required this.onSlectedAnswer,
+    required this.onBack,
+  });
 
   final void Function(String answer) onSlectedAnswer;
+  final void Function() onBack;
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreen();
@@ -23,7 +28,12 @@ class _QuestionsScreen extends State<QuestionsScreen> {
 
   void back() {
     setState(() {
-      currentQuestionIndex--;
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        widget.onBack();
+      } else {
+        currentQuestionIndex = 0;
+      }
     });
   }
 
