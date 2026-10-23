@@ -1,17 +1,13 @@
 # quiz_app
 
-A new Flutter project.
+The second Flutter app from Flutter & Dart - The Complete Guide taught by Maximilian Schwarzmüller.
 
-## Getting Started
+## What does the app do?
 
-This project is a starting point for a Flutter application.
+This app is a simple quiz app where users can answers questions and see their results and retry if they want.
 
-A few resources to get you started if this is your first Flutter project:
+## What I learned in this project?
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+In this project, I learned about **Lifting State Up**, which is a technique used for collecting state of a widget in a parent class and let the another widget use the collected state.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For this quiz app project, the result page needs the users' selected answers to show their results. Therefore I created the Quiz class as the parent class for these two widgets to collect the selected answers from question page, and pass them to the result page to draw the result.
